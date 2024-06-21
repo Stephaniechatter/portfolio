@@ -7,8 +7,29 @@
   <meta name="keywords" content="Front-end Developer, Texas, Stephanie White, Web Development">
   <title>Stephanie White</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="portfolio/src/style.css">
   <link rel="icon" href="favicon.ico">
+  <style>
+    /* Custom CSS for hero section */
+    .hero-section {
+      background-image: url('path/to/your/hero-image.jpg'); /* Update with your image path */
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      text-align: center;
+      padding: 100px 0; /* Adjust padding as needed */
+    }
+
+    .hero-section h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero-section p {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+    }
+  </style>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -25,23 +46,23 @@
           <a class="nav-link" href="about.html">About me</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="about.html#contact">Contact me</a>
+          <a class="nav-link" href="contact.html">Contact me</a>
         </li>
       </ul>
     </div>
   </nav>
 
-  <div class="container text-center">
-    <h2>👋 Hi, I am</h2>
-    <h1>Stephanie White</h1>
-    <h3>🇺🇸 Front-end developer, based in Texas</h3>
-    <div class="navigation-links">
-      <a href="about.html#contact" class="btn btn-primary contact-link">Contact me</a>
-      <a href="about.html" class="btn btn-outline-primary about-link">About me</a>
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <div class="container">
+      <h1>Welcome to My Portfolio</h1>
+      <p>I'm Stephanie White, a Front-end Developer based in Texas.</p>
+      <a href="#projects" class="btn btn-primary">View Projects</a>
     </div>
   </div>
 
-  <div class="container mt-5">
+  <!-- Main Content -->
+  <div class="container mt-5" id="projects">
     <h2 class="text-center">My Projects</h2>
     <div class="row">
       <div class="col-md-4">
@@ -77,6 +98,12 @@
     </div>
   </div>
 
+  <!-- Footer -->
+  <footer class="container text-center mt-5">
+    <p>&copy; 2024 Stephanie White. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript files -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6jHty5KVphtPhzWj9WO1clHTMGaol07pS7PQ6U5HhgZI3H9pR8" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
