@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System Exploration</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic styles for the homepage */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #17243C; /* Fallback background color */
+            background: url('images/mainbackground.jpg') no-repeat center center fixed;
+            background-size: cover; /* Ensure the background image covers the entire viewport */
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: fadeInAnimation 1s ease-in forwards;
+        }
+
+        @keyframes fadeInAnimation {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            color: #7CCCD8;
+        }
+    
+
+        .planet-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .planet-link {
+            text-decoration: none;
+            color: #333;
+            margin: 10px;
+            text-align: center;
+            width: 150px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added box-shadow for depth */
+        }
+
+        .planet-link:hover {
+            background-color: #B35DCE; /* Light purple background on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced box-shadow on hover */
+            transform: scale(1.1); /* Scale up on hover */
+        }
+
+        .planet-link img {
+            transition: transform 0.3s ease;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Solar System Exploration</h1>
+        
+        <p>Click on a planet to learn more:</p>
+    </header>
+    <div class="planet-list">
+        <a href="mercury.html" class="planet-link">
+            <div>
+                <img src="images/mecury.jpg" alt="Mercury" width="100">
+                <div>Mercury</div>
+            </div>
+        </a>
+        <a href="venus.html" class="planet-link">
+            <div>
+                <img src="images/venus.jpg" alt="Venus" width="100">
+                <div>Venus</div>
+            </div>
+        </a>
+        <a href="earth.html" class="planet-link">
+            <div>
+                <img src="images/earth.jpg" alt="Earth" width="100">
+                <div>Earth</div>
+            </div>
+        </a>
+        <a href="mars.html" class="planet-link">
+            <div>
+                <img src="images/mars.jpg" alt="Mars" width="100">
+                <div>Mars</div>
+            </div>
+        </a>
+        <a href="jupiter.html" class="planet-link">
+            <div>
+                <img src="images/jupiter.avif" alt="Jupiter" width="100">
+                <div>Jupiter</div>
+            </div>
+        </a>
+        <a href="saturn.html" class="planet-link">
+            <div>
+                <img src="images/saturn.jpg" alt="Saturn" width="100">
+                <div>Saturn</div>
+            </div>
+        </a>
+        <a href="uranus.html" class="planet-link">
+            <div>
+                <img src="images/uranus.avif" alt="Uranus" width="100">
+                <div>Uranus</div>
+            </div>
+        </a>
+        <a href="neptune.html" class="planet-link">
+            <div>
+                <img src="images/neptune.jpg" alt="Neptune" width="100">
+                <div>Neptune</div>
+            </div>
+        </a>
+    </div>
+
+    <script>
+        // Optional: JavaScript for smooth scroll to top button
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    
+    </script>
+</body>
+</html>
