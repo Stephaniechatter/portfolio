@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Ghibli Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="weather-app">
+        <header>
+            <h1>Studio Ghibli Weather App</h1>
+        </header>
+        <div class="weather-info">
+            <input type="text" id="city-input" placeholder="Enter city name">
+            <button id="get-weather-btn">Get Weather</button>
+            <div id="loading-spinner">
+                <img src="spirited-away-soot-sprites-coal-ny1nckds1n7o4i33.gif" alt="Fetching data..." class="spinner-img">
+            </div>
+            <div id="weather-display">
+                <!-- Daily weather information will be displayed here -->
+            </div>
+            <div id="weekly-forecast">
+                <!-- Weekly forecast will be displayed here -->
+            </div>
+        </div>
+        <footer>
+            This weather app was coded by <a href="https://github.com/Stephaniechatter" target="_blank">Stephanie White</a> and open sourced on <a href="https://github.com/Stephaniechatter/test-repo" target="_blank">GitHub</a> and is hosted on <a href="https://studioghibliweather.netlify.app" target="_blank">Netlify</a>.
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

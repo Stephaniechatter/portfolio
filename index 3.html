@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/style.css">
+    <title>Poem Generator</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Poem Generator</h1> 
+        </header>
+        <main>
+            <div class="form-container">
+            <form id="poem-generator-form">
+                <input type="text" 
+                    placeholder="Enter the poem topic here" 
+                    autofocus
+                    required
+                    autocomplete="off"
+                    class="instructions"
+                    id="user-instructions"
+                />
+                <input type="submit" class="submit-button"/>
+            </form>
+            <div class="hint">i.e: Flower, Love, or Heartbreak </div>
+        </div>
+            
+            <div class="poem hidden" id="poem"></div>
+        </main>
+        <footer>
+            This AI project was coded by <a href="https://github.com/Stephaniechatter" target="_blank">Stephanie White</a> and is 
+            <a href="https://github.com/Stephaniechatter/poem-generator" target="_blank">open-sourced on GitHub</a>
+            and is <a href="https://main--chattertonpoemgenerator.netlify.app/" target="_blank">hosted on Netlify</a>.
+        </footer>
+    </div>
+
+    <script src="src/index.js"></script>
+</body>
+</html>
