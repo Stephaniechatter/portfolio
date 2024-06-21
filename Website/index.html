@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History Teacher's Website</title>
+    <link rel="stylesheet" href="src/styles.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <style>
+        /* Custom styles for header */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+        }
+
+        .logo {
+            font-size: 24px;
+        }
+
+        .logo img {
+            width: 60px; /* Adjust as needed */
+            height: 60px; /* Adjust as needed */
+            border-radius: 50%; /* Makes the image circular */
+            margin-right: 20px; /* Adjust margin for spacing */
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="src/f9ff48d2-21c3-49d7-973f-9af42288e943.webp" alt="Logo">
+            <h1>APUSH</h1>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="units.html">Units</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="week-summary" id="week-summary">
+        <div class="container">
+            <h2>This Week's Summary</h2>
+            <input type="text" id="week-plan" placeholder="Week of...">
+            <div class="week-calendar">
+                <div class="day" id="monday">
+                    <h3>Monday</h3>
+                    <form id="form-monday">
+                        <input type="text" class="activity-type" placeholder="Type of Activity">
+                        <input type="text" class="activity-name" placeholder="Activity Name">
+                        <button type="button" class="add-activity-btn">Add Activity</button>
+                    </form>
+                    <ul id="monday-activities" class="sortable-list">
+                        <!-- Activities for Monday will be dynamically added here -->
+                    </ul>
+                </div>
+                <div class="day" id="tuesday">
+                    <h3>Tuesday</h3>
+                    <form id="form-tuesday">
+                        <input type="text" class="activity-type" placeholder="Type of Activity">
+                        <input type="text" class="activity-name" placeholder="Activity Name">
+                        <button type="button" class="add-activity-btn">Add Activity</button>
+                    </form>
+                    <ul id="tuesday-activities" class="sortable-list">
+                        <!-- Activities for Tuesday will be dynamically added here -->
+                    </ul>
+                </div>
+                <div class="day" id="wednesday">
+                    <h3>Wednesday</h3>
+                    <form id="form-wednesday">
+                        <input type="text" class="activity-type" placeholder="Type of Activity">
+                        <input type="text" class="activity-name" placeholder="Activity Name">
+                        <button type="button" class="add-activity-btn">Add Activity</button>
+                    </form>
+                    <ul id="wednesday-activities" class="sortable-list">
+                        <!-- Activities for Wednesday will be dynamically added here -->
+                    </ul>
+                </div>
+                <div class="day" id="thursday">
+                    <h3>Thursday</h3>
+                    <form id="form-thursday">
+                        <input type="text" class="activity-type" placeholder="Type of Activity">
+                        <input type="text" class="activity-name" placeholder="Activity Name">
+                        <button type="button" class="add-activity-btn">Add Activity</button>
+                    </form>
+                    <ul id="thursday-activities" class="sortable-list">
+                        <!-- Activities for Thursday will be dynamically added here -->
+                    </ul>
+                </div>
+                <div class="day" id="friday">
+                    <h3>Friday</h3>
+                    <form id="form-friday">
+                        <input type="text" class="activity-type" placeholder="Type of Activity">
+                        <input type="text" class="activity-name" placeholder="Activity Name">
+                        <button type="button" class="add-activity-btn">Add Activity</button>
+                    </form>
+                    <ul id="friday-activities" class="sortable-list">
+                        <!-- Activities for Friday will be dynamically added here -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Contact: historyteacher@email.com</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
