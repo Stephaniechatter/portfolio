@@ -1,132 +1,119 @@
+/* Global Styles */
 :root {
-  --primary-color: #9c27b0; /* Purple */
-  --secondary-color: #f48fb1; /* Pink */
-  --light-purple: #ba68c8; /* Lighter purple */
-  --light-pink: #f8bbd0; /* Light pink */
-  --box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  --primary-color: #CBBACC; /* Light mauve */
+  --secondary-color: #2580B3; /* Deep sky blue */
+  --accent-color: #EBA3B6; /* Pale pink */
+  --light-accent: #F7E3AF; /* Pale yellow */
+  --background-gradient: linear-gradient(-225deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  --text-color: #333333; /* Dark grey text */
+  --shadow-color: rgba(0, 0, 0, 0.2); /* Light box shadow color */
 }
 
 body {
-  margin: 60px auto;
-  max-width: 800px;
-  font-family: Arial, sans-serif;
-  /* Apply radial gradient background */
-  background: radial-gradient(328px at 2.9% 15%, rgb(191, 224, 251) 0%, rgb(232, 233, 251) 25.8%, rgb(252, 239, 250) 50.8%, rgb(234, 251, 251) 77.6%, rgb(240, 251, 244) 100.7%);
-  color: #333; /* Optional: Set a default text color */
-}
-
-h1, h2, h3 {
-  text-align: center;
   margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--background-gradient);
+  color: var(--text-color);
 }
 
-h1 {
-  font-size: 96px;
-  color: #6c63ff; /* Change h1 color to purple */
+.navbar-light .navbar-nav .nav-link {
+  color: var(--text-color);
 }
 
-h2 {
-  font-size: 48px;
+.navbar-light .navbar-nav .nav-link:hover {
+  color: var(--accent-color);
 }
 
-h3 {
-  font-size: 24px;
-  opacity: 0.7;
-}
-
-p {
-  background: var(--secondary-color);
-  padding: 20px;
-  border-radius: 4px;
-  font-size: 18px;
-  line-height: 1.5;
+/* Hero Section */
+.hero-section {
+  background: var(--background-gradient);
+  background-size: cover;
+  background-position: center;
+  color: var(--text-color);
   text-align: center;
+  padding: 100px 0;
 }
 
-.navigation-links {
-  display: flex;
-  margin-top: 40px;
-  justify-content: center;
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
 
-.navigation-links a {
-  margin: 20px;
-  border-radius: 4px;
-  padding: 20px 15px;
-  text-decoration: none;
-  text-transform: capitalize;
-}
-
-.contact-link {
-  background: var(--primary-color);
-  box-shadow: var(--box-shadow);
-  color: white;
-}
-
-.about-link {
-  color: var(--primary-color);
-  border: 1px solid var(--primary-color);
-}
-
-.homepage-link {
-  color: var(--primary-color);
-  text-align: center;
-  display: block;
-}
-
-.email-link {
-  display: flex;
-  justify-content: center;
-  color: var(--primary-color);
-  font-size: 28px;
-  text-decoration: none;
-}
-
-.email-link:hover {
-  text-decoration: underline;
-}
-
-.bg-light {
-  background: var(--secondary-color) !important;
-}
-
-.project-card {
+.hero-section p {
+  font-size: 1.5rem;
   margin-bottom: 30px;
 }
 
-.card-img-top {
-  height: 200px;
-  object-fit: cover;
+/* Projects Section */
+.container {
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
-/* Button Styles */
+h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.card {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  box-shadow: 0 5px 10px var(--shadow-color);
+}
+
+.card:hover {
+  background-color: var(--secondary-color);
+}
+
+.card-title {
+  font-size: 1.5rem;
+}
+
+.card-text {
+  font-size: 1rem;
+}
+
 .btn-primary {
-  background-color: var(--light-purple); /* Lighter purple */
-  border-color: var(--light-purple);
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
   color: white;
 }
 
 .btn-primary:hover {
-  background-color: var(--light-pink); /* Light pink */
-  border-color: var(--light-pink);
-}
-
-.btn-outline-primary {
-  color: var(--light-purple); /* Lighter purple */
-  border-color: var(--light-purple);
-}
-
-.btn-outline-primary:hover {
-  background-color: var(--light-pink); /* Light pink */
+  background-color: var(--light-accent);
+  border-color: var(--light-accent);
   color: white;
 }
 
-.btn-outline-secondary {
-  color: var(--secondary-color); /* Pink */
-  border-color: var(--secondary-color);
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 20px 0;
 }
 
-.btn-outline-secondary:hover {
-  background-color: var(--secondary-color); /* Pink */
-  color: white;
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-section p {
+    font-size: 1.2rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+}
+/* style.css */
+.github-link {
+  color: #0366d6; /* GitHub link color */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.github-link:hover {
+  text-decoration: underline;
 }
