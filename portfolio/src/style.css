@@ -139,6 +139,34 @@ footer {
   padding: 20px 0;
 }
 
+.small-banner {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  width: auto;
+}
+
+.social-icons {
+  margin-top: 10px; /* Adjust spacing as needed */
+}
+
+.social-icon {
+  font-size: 24px;
+  margin: 0 5px;
+  color: #007bff; /* Adjust color as needed */
+}
+
+
+
+
+.social-icon:hover {
+  color: var(--accent-color); /* Adjust hover color as needed */
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero-section {
@@ -166,49 +194,3 @@ footer {
     font-size: 2rem;
   }
 }
-
-/* Additional styles */
-.github-link {
-  color: #0366d6; /* GitHub link color */
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.github-link:hover {
-  text-decoration: underline;
-}
-
-.small-banner {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #f0f0f0;
-  padding: 10px 20px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adding a subtle shadow */
-  z-index: 1000; /* Ensures it stays above other content */
-  width: auto; /* Adjust width as needed */
-}
-
-.small-banner p {
-  margin-bottom: 5px; /* Adjust spacing */
-}
-
-.small-banner .btn {
-  padding: 5px 10px; /* Adjust button padding */
-  font-size: 0.9rem; /* Adjust button font size */
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px; /* Adjust spacing */
-}
-
-.social-icon {
-  font-size: 20px; /* Adjust icon size */
-  margin: 0 8px; /* Adjust icon spacing */
-  color: var(--accent-color); /* Use your defined accent color */
-}
-
