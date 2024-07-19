@@ -75,17 +75,35 @@ body {
   width: 100%;
 }
 
+/* Primary Button */
 .hero-section .btn-primary {
   font-size: 1.25rem;
   padding: 15px 30px;
   border-radius: 10px;
   background-color: var(--accent-color);
   border-color: var(--accent-color);
+  color: white;
 }
 
 .hero-section .btn-primary:hover {
   background-color: var(--light-accent);
   border-color: var(--light-accent);
+  color: white;
+}
+
+/* Secondary Button */
+.hero-section .btn-secondary {
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: white;
+}
+
+.hero-section .btn-secondary:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
   color: white;
 }
 
@@ -157,11 +175,11 @@ footer {
 .social-icon {
   font-size: 24px;
   margin: 0 5px;
-  color: #007bff; /* Adjust color as needed */
+  color: var(--secondary-color); /* Deep sky blue */
 }
 
 .social-icon:hover {
-  color: var(--accent-color); /* Adjust hover color as needed */
+  color: var(--primary-color); /* Light mauve */
 }
 
 /* Responsive Design */
