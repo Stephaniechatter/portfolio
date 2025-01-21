@@ -1,0 +1,74 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    background-color: #181818; /* Rich black */
+    color: #E0E0E0; /* Light gray text for contrast */
+  }
+  
+  #student-info,
+  #game-area,
+  #results {
+    margin-top: 50px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 10px;
+    background-color: #4CAF50; /* Vibrant green */
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #388E3C; /* Darker green on hover */
+  }
+  
+  #lives-container {
+    margin: 20px 0;
+  }
+  
+  .heart {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-image: url('heart.png'); /* Zelda-style pixel heart image */
+    background-size: cover;
+    margin: 0 5px;
+  }
+  
+  .heart.empty {
+    background-image: url('heart-empty.png'); /* Empty heart image */
+  }
+  
+  .correct {
+    background-color: #66BB6A; /* Lighter green for correct answers */
+    color: white;
+  }
+  
+  .incorrect {
+    background-color: #D32F2F; /* Bold red for incorrect answers */
+    color: white;
+  }
+  
+  #lives-container {
+    display: flex;
+    gap: 5px;
+    margin: 10px 0;
+  }
+  
+  .heart {
+    width: 30px;
+    height: 30px;
+    background-image: url('img/pixel-heart-2779422_1280.webp'); /* Full heart image */
+    background-size: cover;
+  }
+  
+  .heart.empty {
+    background-image: url('img/kisspng-animation-awesome-pixel-5af9c902e17b21.4649731615263193629236.jpg'); /* Empty heart image */
+  }
+  
+
+  
