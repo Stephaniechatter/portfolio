@@ -1,0 +1,266 @@
+//html\\
+
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Pokédex</title>
+  <link rel="stylesheet" href="interactivepokedex.css">
+</head>
+<body>
+  <div class="pokedex">
+    <header>
+      <h1>Interactive Pokédex</h1>
+    </header>
+    <div class="pokedex-screen">
+      <div id="pokemon-display">
+        <p>Loading Pokémon...</p>
+      </div>
+    </div>
+    <div class="controls">
+      <input type="text" id="search" placeholder="Enter Pokémon name or ID">
+      <button id="search-btn">Search</button>
+    </div>
+    <footer>
+      <button id="prev-btn">Previous</button>
+      <button id="random-btn">Random</button>
+      <button id="next-btn">Next</button>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+//CSS//
+
+/* style.css */
+
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f6f6f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Pokédex Container */
+  .pokedex {
+    width: 400px;
+    height: 600px;
+    background-color: #ffcc01; /* Pokémon yellow */
+    border: 12px solid #3b4cca; /* Pokémon blue */
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Header */
+  header {
+    text-align: center;
+    color: #3b4cca; /* Pokémon blue */
+    font-size: 1.8rem;
+    padding: 10px 0;
+    font-weight: bold;
+    text-shadow: 2px 2px #f6f6f6;
+  }
+  
+  /* Pokédex Screen */
+  .pokedex-screen {
+    flex-grow: 1;
+    background-color: #ffffff;
+    margin: 10px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    overflow: auto;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Pokémon Display */
+  #pokemon-display {
+    text-align: center;
+  }
+  
+  #pokemon-display img {
+    width: 150px;
+    height: 150px;
+  }
+  
+  #pokemon-display h2 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+    color: #3b4cca;
+  }
+  
+  #pokemon-display p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  /* Search Input and Button */
+  .controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  #search {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #3b4cca;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  #search-btn {
+    background-color: #3b4cca; /* Pokémon blue */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  #search-btn:hover {
+    background-color: #2a2ea6;
+  }
+  
+  /* Footer Buttons */
+  footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+  }
+  
+  footer button {
+    background-color: #3b4cca;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    flex-grow: 1;
+    margin: 0 5px;
+  }
+  
+  footer button:hover {
+    background-color: #2a2ea6;
+  }
+  
+  #prev-btn {
+    background-color: #ff6f61; /* Fire-inspired */
+  }
+  
+  #prev-btn:hover {
+    background-color: #e05b4d;
+  }
+  
+  #random-btn {
+    background-color: #4caf50; /* Grass-inspired */
+  }
+  
+  #random-btn:hover {
+    background-color: #3d8d3e;
+  }
+  
+  #next-btn {
+    background-color: #2196f3; /* Water-inspired */
+  }
+  
+  #next-btn:hover {
+    background-color: #1976d2;
+  }
+  
+  /* Scrollbar for Pokémon Screen */
+  .pokedex-screen::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  .pokedex-screen::-webkit-scrollbar-thumb {
+    background-color: #3b4cca;
+    border-radius: 5px;
+  }
+  
+  .pokedex-screen::-webkit-scrollbar-thumb:hover {
+    background-color: #2a2ea6;
+  }
+
+//JavaScript//
+
+const API_URL = "https://pokeapi.co/api/v2/pokemon/";
+let currentPokemon = 1; // Tracks the current Pokémon ID
+
+// Fetch Pokémon data from API
+async function fetchPokemon(pokemon) {
+  try {
+    const response = await fetch(`${API_URL}${pokemon}`);
+    if (!response.ok) throw new Error("Pokémon not found");
+    const data = await response.json();
+    displayPokemon(data);
+  } catch (error) {
+    console.error(error);
+    document.getElementById("pokemon-display").innerHTML = "<p>Pokémon not found!</p>";
+  }
+}
+
+// Display Pokémon data on the Pokédex screen
+function displayPokemon(data) {
+  const display = document.getElementById("pokemon-display");
+  display.innerHTML = `
+    <img src="${data.sprites.front_default}" alt="${data.name}">
+    <h2>${data.name.toUpperCase()}</h2>
+    <p><strong>Type:</strong> ${data.types.map(type => type.type.name).join(", ")}</p>
+    <p><strong>HP:</strong> ${data.stats[0].base_stat}</p>
+    <p><strong>Attack:</strong> ${data.stats[1].base_stat}</p>
+    <p><strong>Defense:</strong> ${data.stats[2].base_stat}</p>
+  `;
+}
+
+// Search for Pokémon by name or ID
+document.getElementById("search-btn").addEventListener("click", () => {
+  const searchValue = document.getElementById("search").value.trim().toLowerCase();
+  if (searchValue) {
+    fetchPokemon(searchValue);
+    currentPokemon = isNaN(searchValue) ? currentPokemon : parseInt(searchValue);
+  }
+});
+
+// Navigate to the previous Pokémon
+document.getElementById("prev-btn").addEventListener("click", () => {
+  currentPokemon = currentPokemon > 1 ? currentPokemon - 1 : 1;
+  fetchPokemon(currentPokemon);
+});
+
+// Navigate to the next Pokémon
+document.getElementById("next-btn").addEventListener("click", () => {
+  currentPokemon++;
+  fetchPokemon(currentPokemon);
+});
+
+// Fetch a random Pokémon
+document.getElementById("random-btn").addEventListener("click", () => {
+  currentPokemon = Math.floor(Math.random() * 1010) + 1; // Adjust max value if API updates
+  fetchPokemon(currentPokemon);
+});
+
+// Load the first Pokémon on page load
+fetchPokemon(currentPokemon);
